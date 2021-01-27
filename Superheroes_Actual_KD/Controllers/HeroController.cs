@@ -20,12 +20,22 @@ namespace Superheroes_Actual_KD.Controllers
 
         public IActionResult Index()
         {
+            List<Superhero> superheroes = _context.Superheroes.ToList();
+
+            return View(superheroes);
+        }
+
+        public IActionResult Create()
+        {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Create(Superhero superhero)
         {
-            return View();
+            _context.Superheroes.Add(superhero);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
