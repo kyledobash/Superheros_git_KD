@@ -5,14 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Superheroes_Actual_KD.Models;
+using Superheroes_Actual_KD.Data;
 
 namespace Superheroes_Actual_KD.Controllers
 {
     public class HeroController : Controller
     {
-        public HeroController()
-        {
+        public ApplicationDbContext _context;
 
+        public HeroController(ApplicationDbContext context)
+        {
+            _context = context;
         }
 
         public IActionResult Index()
