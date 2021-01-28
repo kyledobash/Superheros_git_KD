@@ -38,9 +38,10 @@ namespace Superheroes_Actual_KD.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit()
-        {
-            return View();
+        public IActionResult Edit(int id)
+        {           
+            var hero = _context.Superheroes.Find(id);
+            return View(hero);
         }
 
         [HttpPost]
@@ -51,8 +52,9 @@ namespace Superheroes_Actual_KD.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
+            var hero = _context.Superheroes.Find(id);
             return View();
         }
 
@@ -63,7 +65,5 @@ namespace Superheroes_Actual_KD.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
     }
 }

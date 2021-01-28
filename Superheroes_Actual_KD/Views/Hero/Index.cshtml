@@ -8,6 +8,7 @@
 @foreach (var Superhero in Model)
 {
 
-    <a asp-action="Details" asp-route-computer="@Superhero.Id"><br>@Superhero.Name<br /></a>
+    <a asp-action="Details" asp-route-id="@Superhero.Id"><br>@Superhero.Name<br /></a>
+    <a asp-action="Edit" asp-route-id="@Superhero.Id">Edit</a>
 
 }
