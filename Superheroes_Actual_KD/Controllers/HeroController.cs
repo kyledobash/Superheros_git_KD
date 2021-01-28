@@ -38,12 +38,18 @@ namespace Superheroes_Actual_KD.Controllers
             return RedirectToAction("Index");
         }
 
-        // public IActionResult Edit() GET
+        public IActionResult Edit()
+        {
+            return View();
+        }
 
-       // HTTP POST ATTRIBUTE
-        // public IActionResult Edit() POST
-        // pass the model back in.
-        // .Update()
+        [HttpPost]
+        public IActionResult Edit(Superhero superhero)
+        {
+            _context.Superheroes.Update(superhero);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Delete()
         {
