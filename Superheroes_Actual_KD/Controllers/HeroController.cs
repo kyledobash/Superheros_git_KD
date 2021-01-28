@@ -37,5 +37,13 @@ namespace Superheroes_Actual_KD.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult Delete(Superhero superhero)
+        {
+            _context.Superheroes.Remove(superhero);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
