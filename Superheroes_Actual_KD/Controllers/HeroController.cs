@@ -38,6 +38,11 @@ namespace Superheroes_Actual_KD.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Delete(Superhero superhero)
         {

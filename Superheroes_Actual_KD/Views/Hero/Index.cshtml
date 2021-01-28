@@ -5,10 +5,7 @@
 
 @foreach (var Superhero in Model)
 {
-    <hr />
-    <h1 class="red-class">@Superhero.Name @Superhero.AlterEgo @Superhero.PrimaryAbility
-        @Superhero.SecondaryAbility @Superhero.CatchPhrase
-    </h1>
-    <a asp-action="Details" asp-route-computer="@Superhero.Id">Details</a>
-    <hr />
+
+    <a asp-action="Details" asp-route-computer="@Superhero.Id"><br>@Superhero.Name<br /></a>
+
 }
