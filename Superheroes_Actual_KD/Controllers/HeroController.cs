@@ -38,6 +38,18 @@ namespace Superheroes_Actual_KD.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Details(int id)
+        {
+            var hero = _context.Superheroes.Find(id);
+            return View(hero);
+        }
+
+        [HttpPost]
+        public IActionResult Details(Superhero superhero)
+        {
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Edit(int id)
         {           
             var hero = _context.Superheroes.Find(id);
